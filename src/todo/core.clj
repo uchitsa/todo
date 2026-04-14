@@ -27,11 +27,15 @@
   (loop []
     (println "Welcome to ToDo task tracker")
     (println "1. Add task")
+    (println "2. Show tasks")
+
+    (println "5. Quit")
 
     (println "Choose the action:")
     (let [choice (read-line)]
       (cond
         (= choice "1") (add-task)
+        (= choice "2") (show-tasks)
         (= choice "5") (do (println "Bye bye!") (System/exit 0))
         :else          (println "Wrong choice"))
       (recur))))
